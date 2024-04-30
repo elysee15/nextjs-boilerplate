@@ -1,14 +1,18 @@
 import { fileURLToPath } from "node:url";
 import createJiti from "jiti";
 import withBundleAnalyzer from "@next/bundle-analyzer";
+import createNextIntlPlugin from "next-intl/plugin";
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
-jiti("./config/env");
+jiti("./lib/env");
+
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
+const withNextIntl = createNextIntlPlugin("./lib/i18n.ts");
 
 /** @type {import('next').NextConfig} */
-const options = {};
+const nextConfig = {};
 
-const nextConfig =
-  process.env.ANALYZE === "true" ? withBundleAnalyzer()(options) : options;
-
-export default nextConfig;
+export default bundleAnalyzer(withNextIntl(nextConfig));
