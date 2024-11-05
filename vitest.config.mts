@@ -18,5 +18,6 @@ export default defineConfig({
     ],
     setupFiles: ["./vitest-setup.ts"],
     env: loadEnv("", process.cwd(), ""),
+    passWithNoTests: true,
   },
 });

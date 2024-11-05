@@ -1,4 +1,4 @@
-import type { LocalePrefix } from "../node_modules/next-intl/dist/types/src/shared/types";
+type LocalePrefix = "as-needed";
 
 const localePrefix: LocalePrefix = "as-needed";
 

@@ -21,13 +21,23 @@
     "noImplicitThis": true,
     "noUncheckedIndexedAccess": true,
     "preserveConstEnums": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    "sourceMap": true,
+
     "plugins": [
       {
         "name": "next"
       }
     ],
+    "baseUrl": ".",
+    "types": ["vitest/globals"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"]
     }
   },
   "include": [
