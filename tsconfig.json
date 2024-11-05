@@ -27,7 +27,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [
@@ -35,7 +35,14 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "./reset.d.ts"
+    "./reset.d.ts",
+    "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "./out/**/*",
+    "./node_modules/**/*",
+    "**/*.spec.ts",
+    "**/*.e2e.ts"
+  ]
 }
