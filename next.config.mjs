@@ -1,10 +1,9 @@
-import { fileURLToPath } from "node:url";
-import createJiti from "jiti";
+import { createJiti } from "jiti";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 import createNextIntlPlugin from "next-intl/plugin";
 
-const jiti = createJiti(fileURLToPath(import.meta.url));
-jiti("./lib/env");
+const jiti = createJiti(import.meta.url);
+await jiti.import("./libs/env");
 
 const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
